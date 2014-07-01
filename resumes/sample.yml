@@ -1,0 +1,28 @@
+options:
+  theme: simple
+  markdown: true
+
+biodata:
+  name: John Appleseed
+  address: "1 Infinite Loop, Cupertino CA 95014, United States"
+  email: "john@apple.com"
+  phone: "+1 1800MYAPPLE"
+
+summary: "Some description for this awesome user whom Apple has choosen for their every contact app."
+
+experiences:
+  -
+    title: Look Good Contact Person
+    start: 1985
+    end: Future
+    summary: "Just have to look good and keep being awesome"
+    points:
+      - "Be part of the all the contact apps"
+      - "Never ever respond to any email"
+      - "Ignore all the phone calls and never get back to any one."
+
+references:
+  -
+    name: Tim Cook
+    title: Chief Executive Officer
+    contact: 1800APPLE

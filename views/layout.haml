@@ -1,0 +1,11 @@
+!!!html
+%head
+  %link{"rel" => "stylesheet", href: "/css/bootstrap.min.css"}
+  - if defined?(resume)
+    %title= resume.biodata.name
+    %link{"rel" => "stylesheet", href: "/css/#{resume.theme.to_s}.css"}
+  - else
+    %title Resumerator
+    %link{"rel" => "stylesheet", href: "/css/main.css"}
+%body
+  = yield

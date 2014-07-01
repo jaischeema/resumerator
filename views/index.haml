@@ -1,0 +1,9 @@
+.container#main
+  .page-header
+    %h1 Resumerator
+
+  .list-group
+    - resumes.each_with_index do |resume, index|
+      %a.list-group-item{ href: "/resumes/#{index+1}" }
+        %span.badge= resume.theme.to_s
+        = resume.biodata.name

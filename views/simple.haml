@@ -1,0 +1,50 @@
+.container#simple
+  .page-header
+    %h1= resume.biodata.name
+    - if resume.biodata.tagline.present?
+      %small= resume.biodata.tagline
+  .sub-header
+    %ul.list
+      %li
+        %span.item-title email:
+        %span.item-value= resume.biodata.email
+      %li
+        %span.item-title phone:
+        %span.item-value= resume.biodata.phone
+      %li
+        %span.item-title address:
+        %span.item-value= resume.biodata.address
+
+  .section
+    %h2.section-title Summary
+    %p= resume.summary
+
+  .section
+    %h2.section-title Experience
+    - resume.experiences.each do |experience|
+      .sub-section
+        %h3
+          = experience.title
+          .timing
+            %span.start= experience.start
+            &mdash;
+            %span.start= experience.end
+        - if experience.summary.present?
+          %p.summary= experience.summary
+        - if experience.points.present?
+          %ul.points
+            - experience.points.each do |point|
+              %li= point
+
+  .section
+    %h2.section-title References
+    - resume.references.each do |reference|
+      .sub-section
+        %h3= reference.name
+        %ul.list
+          %li
+            %span.item-title Position:
+            %span.item-value= reference.title
+          %li
+            %span.item-title Contact:
+            %span.item-value= reference.contact

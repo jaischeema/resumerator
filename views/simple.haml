@@ -43,8 +43,9 @@
         %h3= reference.name
         %ul.list
           %li
-            %span.item-title Position:
-            %span.item-value= reference.title
-          %li
             %span.item-title Contact:
             %span.item-value= reference.contact
+          - if reference.title.present?
+            %li
+              %span.item-title Position:
+              %span.item-value= reference.title

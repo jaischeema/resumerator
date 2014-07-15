@@ -23,7 +23,7 @@ class Resumerator < Sinatra::Base
 
   get '/resumes/:index' do
     resume = resumes[params[:index].to_i - 1]
-    haml resume.theme, locals: { resume: resume }
+    haml resume.layout, locals: { resume: resume }
   end
 end
 

@@ -13,9 +13,8 @@ summary: "Some description for this awesome user whom Apple has choosen for thei
 experiences:
   -
     title: Look Good Contact Person
-    start: 1985
-    end: Future
-    summary: "Just have to look good and keep being awesome"
+    sub_title: 1985 - Future
+    description: "Just have to look good and keep being awesome"
     points:
       - "Be part of the all the contact apps"
       - "Never ever respond to any email"
@@ -23,6 +22,6 @@ experiences:
 
 references:
   -
-    name: Tim Cook
-    title: Chief Executive Officer
-    contact: 1800APPLE
+    title: Tim Cook
+    sub_title: Chief Executive Officer
+    description: "Contact: 1800APPLE"

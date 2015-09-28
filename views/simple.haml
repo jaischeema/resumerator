@@ -16,19 +16,19 @@
         %span.item-value= resume.biodata.address
 
   - resume.attributes.each do |attribute, value|
-    %h2.section-title= attribute.capitalize
-    - if value.is_a? Array
-      - value.each do |item|
-        .sub-section
-          %h3= item.title
-          - if item.sub_title.present?
-            .sub-title= item.sub_title
-        - if item.description.present?
-          %p.summary= item.description
-        - if item.points.present?
-          %ul.points
-            - item.points.each do |point|
-              %li= point
-    - else
-      .section
+    .section{:id => attribute}
+      %h2.section-title= attribute.to_s.gsub("_", " ").split(" ").map(&:capitalize).join(" ")
+      - if value.is_a? Array
+        - value.each do |item|
+          .sub-section
+            %h3= item.title
+            - if item.sub_title.present?
+              .sub-title= item.sub_title
+            - if item.description.present?
+              %p.summary= item.description
+            - if item.points.present?
+              %ul.points
+                - item.points.each do |point|
+                  %li= point
+      - else
         %p= value

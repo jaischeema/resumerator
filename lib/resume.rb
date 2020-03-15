@@ -63,9 +63,8 @@ class Biodata
   end
 end
 
-
 class ResumeItem
-  attr_accessor :title, :sub_title, :description, :points
+  attr_accessor :title, :sub_title, :description, :points, :time_period
 
   def initialize(data)
     data.each do |key, value|

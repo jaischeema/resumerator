@@ -1,0 +1,48 @@
+.container#personal
+  .page-header
+    .page-header__name
+      %h1= resume.biodata.name.split(" ").map { |part| %{<span class="page-header__name__part">#{part}</span>} }.join(" ")
+      - if resume.biodata.tagline.present?
+        %small= resume.biodata.tagline
+    .page-header__info
+      %ul
+        %li
+          %span.item-value= resume.biodata.email
+          %span.item-title E
+        %li
+          %span.item-value= resume.biodata.phone
+          %span.item-title P
+        %li
+          %span.item-value= resume.biodata.address
+          %span.item-title A
+
+  - resume.attributes.each do |attribute, value|
+    .section{:id => attribute}
+      .layout
+        .layout__sidebar
+          %h2.section__heading= attribute.to_s.gsub("_", " ").split(" ").map(&:capitalize).join(" ")
+        .layout__main
+          .layout__separator
+
+      - if value.is_a? Array
+        - value.each do |item|
+          .layout.section__sub-section
+            .layout__sidebar
+              - if item.sub_title.present?
+                %h4.section__sub-title= item.sub_title
+            .layout__main
+              - if item.title.present?
+                %h3.section__title= item.title
+              - if item.time_period.present?
+                %h4.section__time-period= item.time_period
+              - if item.description.present?
+                %p.section__description= item.description
+              - if item.points.present?
+                %ul.section__points
+                  - item.points.each do |point|
+                    %li= point
+      - else
+        .layout
+          .layout__sidebar
+          .layout__main
+            %p= value

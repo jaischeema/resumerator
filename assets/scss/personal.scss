@@ -1,0 +1,145 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://use.typekit.net/vdo8htt.css');
+
+:root {
+  --primary-color: #C5311D;
+  --background-color: #F4EEEE;
+}
+
+body {
+  border-top: 20px solid var(--primary-color);
+  background: var(--background-color);
+  font-size: 16px;
+  font-family: Raleway;
+  line-height: 1.5rem;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+
+  &__name {
+    flex: 1;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'bebas-neue'
+
+      span:first-child {
+        display: block;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__info {
+    flex: 1;
+    text-align: right;
+
+    li {
+      font-size: 0.8rem;
+      color: #777171;
+      margin-bottom: 0.5rem;
+
+      span.item-title {
+        display: inline-block;
+        width: 20px;
+        height: 18px;
+        background: black;
+        color: white;
+        border-radius: 20px;
+        vertical-align: middle;
+        text-align: center;
+        padding-top: 2px;
+        font-size: 10px;
+        line-height: 1rem;
+      }
+    }
+  }
+}
+
+.section {
+  margin-bottom: 30px;
+
+  &__sub-section {
+    margin-bottom: 30px;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-family: 'bebas-neue';
+    font-size: 1.6rem;
+    font-weight: regular;
+    letter-spacing: 0.1rem;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+  }
+
+  &__time-period {
+    margin-top: -0.5rem;
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+    font-family: 'bebas-neue';
+    color: #777171;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+  }
+
+  &__sub-title {
+    text-transform: uppercase;
+    font-family: 'bebas-neue';
+    font-size: 1rem;
+    color: var(--primary-color);
+    letter-spacing: 0.1rem;
+  }
+
+  &__description {
+    margin-bottom: 10px;
+  }
+
+  &__points {
+    list-style: disc;
+    margin-left: 15px;
+  }
+}
+
+.layout {
+  display: flex;
+
+  &__sidebar {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  &__main {
+    flex: 4;
+  }
+
+  &__separator {
+    margin-top: 10px;
+    border-top: 5px solid var(--primary-color);
+  }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+  }
+}
